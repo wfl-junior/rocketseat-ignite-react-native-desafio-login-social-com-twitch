@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: 'https://api.twitch.tv/helix'
-})
-
-export { api };
+export const api = axios.create({
+  baseURL: "https://api.twitch.tv/helix",
+  headers: {
+    "Client-Id": process.env.CLIENT_ID,
+  },
+});
